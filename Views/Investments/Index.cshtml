@@ -1,0 +1,308 @@
+@model FinancialAdvisorCosts.Models.InvestmentModel
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        min-height: 100vh;
+    }
+
+    .modern-container {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 2rem 1rem;
+    }
+
+    .results-card {
+        opacity: 0;
+        transform: translateY(120px);
+        transition: opacity 2.5s ease-out, transform 1.5s ease-out;
+    }
+
+    .results-card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .input-field {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .input-field input {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .input-field input:focus {
+        box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+        transform: translateY(-2px);
+    }
+
+    .calculator-card {
+        background: white;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    .calculator-card:hover {
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+        transform: translateY(-4px);
+    }
+
+    .btn-calculate {
+        background: #667eea;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-calculate:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.1);
+        transition: left 0.3s ease;
+    }
+
+    .btn-calculate:hover {
+        box-shadow: 0 12px 24px rgba(102, 126, 234, 0.5);
+        transform: translateY(-2px);
+    }
+
+    .btn-calculate:hover:before {
+        left: 100%;
+    }
+
+    .result-card-modern {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .result-card-modern:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .result-value {
+        font-size: 1.75rem;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    .result-label {
+        font-size: 0.875rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .total-impact-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        box-shadow: 0 12px 32px rgba(102, 126, 234, 0.3);
+        cursor: help;
+        transition: all 0.3s ease;
+    }
+
+    .total-impact-card:hover {
+        box-shadow: 0 16px 40px rgba(102, 126, 234, 0.4);
+        transform: translateY(-6px) scale(1.02);
+    }
+
+    .total-impact-label {
+        font-weight: 600;
+        font-size: 0.95rem;
+        opacity: 0.95;
+    }
+
+    .total-impact-value {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-top: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-title {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 3rem 2rem;
+        color: #64748b;
+    }
+
+    .empty-state-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        opacity: 0.5;
+    }
+</style>
+
+<script>
+    function triggerResultsAnimation() {
+        const resultsCard = document.querySelector('.results-card');
+        if (resultsCard && @(Model.IsCalculated.ToString().ToLower())) {
+            // Add a small delay to ensure DOM is ready, then trigger animation
+            setTimeout(() => {
+                resultsCard.classList.add('show');
+            }, 50);
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', triggerResultsAnimation);
+</script>
+
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8 px-4 py-8 mx-auto w-full">
+    <!-- Calculator Card -->
+    <div class="lg:col-span-2">
+        <div class="bg-white rounded-2xl p-8 calculator-card">
+            <h4 class="card-title mb-6">Calculate the Wealth Impact of Advisory Fees</h4>
+            <form asp-action="Index" method="post" class="space-y-6" novalidate>
+                <input type="hidden" asp-for="IsCalculated" value="true" />
+
+                <div class="input-field">
+                    <label asp-for="InitialValue" class="block text-sm font-semibold text-slate-700 mb-2"></label>
+                    <input asp-for="InitialValue"
+                           type="text"
+                           placeholder="Initial Portfolio Value"
+                           class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500"
+                           oninput="formatCurrency(this)" />
+                </div>
+
+                <script>
+                    function formatCurrency(el) {
+                        let raw = el.value.replace(/\D/g, "");
+                        if (raw.length > 0) {
+                            el.value = new Intl.NumberFormat("en-US").format(raw);
+                        } else {
+                            el.value = "";
+                        }
+                    }
+                </script>
+
+                <div class="input-field">
+                    <label asp-for="FeePercentage" class="block text-sm font-semibold text-slate-700 mb-2"></label>
+                    <input asp-for="FeePercentage" type="number" placeholder="Annual Fee %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" />
+                </div>
+
+                <div class="input-field">
+                    <label asp-for="AnnualReturn" class="block text-sm font-semibold text-slate-700 mb-2"></label>
+                    <input asp-for="AnnualReturn" type="number" placeholder="Expected Annual Return %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" />
+                </div>
+
+                <div class="input-field">
+                    <label asp-for="Years" class="block text-sm font-semibold text-slate-700 mb-2"></label>
+                    <input asp-for="Years" type="number" placeholder="Years" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" />
+                </div>
+
+                <button type="submit" class="btn-calculate w-full text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                    Calculate Portfolio Value
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Results Card -->
+    <div class="lg:col-span-2">
+        <div class="bg-white rounded-2xl p-8 results-card shadow-2xl w-full" style="inline-size: max-content;">
+            <h5 class="card-title mb-8">Analysis Results</h5>
+            @if (Model.IsCalculated)
+            {
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                    <!-- Card 1 -->
+                    <div class="result-card-modern" style="border-left: 4px solid #10b981;">
+                        <div class="result-label text-green-600">Portfolio Value with No Fees</div>
+                        <div class="result-value text-green-900 mt-3">
+                            @Model.FutureValueNoFees.ToString("C0")
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="result-card-modern" style="border-left: 4px solid #64748b;">
+                        <div class="result-label text-slate-700">Portfolio Value with Fees</div>
+                        <div class="result-value text-slate-700 mt-3">
+                            @Model.PortfolioValueWithFees.ToString("C0")
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Simple Fees Paid -->
+                    <div class="result-card-modern" style="border-left: 4px solid #f59e0b;">
+                        <div class="result-label text-orange-700">Advisor Fees Paid</div>
+                        <div class="result-value text-orange-700 mt-3">
+                            @Model.SimpleFeesPaid.ToString("C0")
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Compound Loss Card -->
+                    <div class="result-card-modern" style="border-left: 4px solid #ef4444;">
+                        <div class="result-label text-red-700">Lost Investment Opportunity</div>
+                        <div class="result-value text-red-700 mt-3">
+                            @Model.CompoundLoss.ToString("C0")
+                            <div class="text-xs text-black-600 mt-1" style="color: black;">The investment opportunity lost from Advisor fees, compounded</div>
+                        </div>
+                    </div
+                </div>
+
+                <!-- Breakdown Card -->
+                @* <div class="mt-6 bg-slate-100 rounded-2xl p-6 border border-slate-300">
+                    <div class="text-sm font-semibold text-slate-700 mb-4">Portfolio Value Breakdown:</div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between items-center pb-2 border-b border-slate-300">
+                            <span class="text-slate-700">Future Value (No Fees)</span>
+                            <span class="font-semibold text-slate-900">@Model.FutureValueNoFees.ToString("C0")</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b border-slate-300 text-orange-700">
+                            <span>Less: Advisor Fees Paid (direct)</span>
+                            <span class="font-semibold">-@Model.SimpleFeesPaid.ToString("C0")</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b-2 border-slate-400 text-red-700">
+                            <span>Less: Lost returns on fees (compound effect)</span>
+                            <span class="font-semibold">-@Model.ExtraCompoundEffect.ToString("C0")</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 bg-green-50 -mx-6 px-6 py-2 rounded">
+                            <span class="font-bold text-green-900">Portfolio Value with Fees</span>
+                            <span class="font-bold text-green-900">@Model.PortfolioValueWithFees.ToString("C0")</span>
+                        </div>
+                    </div>
+                </div> *@
+
+                <!-- Total Impact Card -->
+                <div class="col-span-full total-impact-card rounded-2xl p-8 sm:p-12 text-center mt-8 -mx-8 -mb-8 mx-0 mb-0">
+                    <div class="total-impact-label">
+                        Total Cost of Using an Advisor
+                    </div>
+                    <div class="total-impact-value text-4xl sm:text-5xl" title="Total Advisor Cost = Advisor fees paid + Investment opportunity lost">
+                        @Model.TotalAdvisorCost.ToString("C0")
+                    </div>
+                    <div class="text-xs mt-3 opacity-75">(Sum of direct fees and lost investment opportunity)</div>
+                </div>
+                
+            }
+            else
+            {
+                <div class="empty-state">
+                    <div class="empty-state-icon">📊</div>
+                    <p class="text-lg font-medium">Enter your portfolio details above</p>
+                    <p class="text-sm mt-2">Click "Calculate Portfolio Value" to see the analysis</p>
+                </div>
+            }
+        </div>
+    </div>
