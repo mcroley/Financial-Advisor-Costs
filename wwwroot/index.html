@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Forensic Dossier | Exposing Financial Industry Scams</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Newsreader:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#ffdbd1",
+              "surface-tint": "#b9c7e4",
+              "inverse-on-surface": "#283044",
+              "primary-fixed-dim": "#b9c7e4",
+              "on-tertiary": "#601400",
+              "secondary-fixed": "#d4e4f6",
+              "inverse-primary": "#515f78",
+              "outline-variant": "#44474d",
+              "surface-dim": "#0b1326",
+              "tertiary-fixed-dim": "#ffb5a0",
+              "error-container": "#93000a",
+              "tertiary-container": "#370800",
+              "surface-container-highest": "#2d3449",
+              "on-tertiary-fixed": "#3b0900",
+              "tertiary": "#ffb5a0",
+              "surface-variant": "#2d3449",
+              "on-tertiary-container": "#f04100",
+              "on-secondary-container": "#a7b7c8",
+              "secondary-fixed-dim": "#b8c8da",
+              "on-primary": "#233148",
+              "on-tertiary-fixed-variant": "#872000",
+              "on-primary-fixed-variant": "#39475f",
+              "surface-container-low": "#131b2e",
+              "on-background": "#dae2fd",
+              "on-primary-fixed": "#0d1c32",
+              "on-surface-variant": "#c5c6cd",
+              "surface-container": "#171f33",
+              "outline": "#8f9097",
+              "primary-fixed": "#d6e3ff",
+              "primary": "#b9c7e4",
+              "surface": "#0b1326",
+              "inverse-surface": "#dae2fd",
+              "surface-container-high": "#222a3d",
+              "on-surface": "#dae2fd",
+              "secondary-container": "#394857",
+              "primary-container": "#0a192f",
+              "background": "#0b1326",
+              "on-error-container": "#ffdad6",
+              "on-primary-container": "#74829d",
+              "on-error": "#690005",
+              "on-secondary": "#223240",
+              "on-secondary-fixed": "#0d1d2a",
+              "secondary": "#b8c8da",
+              "error": "#ffb4ab",
+              "on-secondary-fixed-variant": "#394857",
+              "surface-container-lowest": "#060e20",
+              "surface-bright": "#31394d"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Newsreader"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+    <link href="css/site.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface text-on-surface font-label selection:bg-tertiary-container selection:text-on-tertiary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(6,14,32,0.4)] flex justify-between items-center px-8 py-4 max-w-none w-full">
+<div class="text-2xl font-black tracking-tighter text-slate-100 font-headline">
+            THE FORENSIC DOSSIER
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline tracking-tight uppercase font-bold text-slate-400 hover:text-slate-200 transition-colors" href="#">Hidden Fees</a>
+<a class="font-headline tracking-tight uppercase font-bold text-slate-400 hover:text-slate-200 transition-colors" href="#">Fiduciary Duty</a>
+<a class="font-headline tracking-tight uppercase font-bold text-slate-400 hover:text-slate-200 transition-colors" href="#">Red Flags</a>
+<button class="bg-tertiary-container text-on-tertiary-container px-6 py-2 rounded-md font-headline font-bold uppercase tracking-widest hover:opacity-90 transition-all active:scale-95">
+                Start Here
+            </button>
+</div>
+<button class="md:hidden text-slate-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 pb-32 overflow-hidden bg-surface-container-lowest">
+<!-- Background Imagery -->
+<div class="absolute inset-0 opacity-30 mix-blend-luminosity grayscale">
+<img alt="" class="w-full h-full object-cover" data-alt="Close-up of high-stakes financial ledger with handwritten notes and official seals under dramatic office desk lamp lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAltDA-E4x8pp5geBP28OpeAbMlc6RlAUdxiMciH62-u7xPGuVtDEQ8InRHkReN_Z-OXoAm10ZaKE__rv6wsdmNiTWdjAAYYyN1AhV6H49C74Jw4O6faVbTvk_CrVr-hFcf8cMKyv3c4WkrhGavC9T-TIKxQW4eX42eZHqQ11R8KzYgo-clOGSF4Bjab3dYUEO4eMY3PIbxPXw73-kNJyxw_EQ1Niz-Yqv00F188TB0Ln_en6k3cumWIFCe1M9YNGt2_8XCAlUD04Hj"/>
+<div class="absolute inset-0 forensic-gradient"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-tertiary-container border-l-4 border-tertiary text-on-tertiary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">INTERNAL INVESTIGATION: 2024-05-X</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none mb-8 text-slate-100">
+                        THE TRUST GAP: WHY YOUR FINANCIAL ADVISOR MAY BE YOUR GREATEST RISK.
+                    </h1>
+<p class="font-body text-xl md:text-2xl italic text-on-surface-variant max-w-2xl mb-12 leading-relaxed">
+                        Beneath the polished suites and friendly handshakes lies a system engineered to prioritize firm profits over your retirement. We are exposing the hidden architecture of the fee-driven industry.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-tertiary text-on-tertiary px-8 py-4 rounded-md font-headline font-bold uppercase tracking-widest shadow-xl hover:bg-tertiary-fixed transition-all flex items-center gap-3 active:scale-95">
+                            View the Dossier
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="border border-outline-variant text-on-surface px-8 py-4 rounded-md font-headline font-bold uppercase tracking-widest hover:bg-surface-container-high transition-all active:scale-95">
+                            The Methodology
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-500">
+<span class="text-[10px] font-bold uppercase tracking-[0.3em]">Scroll to Decode</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-slate-500 to-transparent"></div>
+</div>
+</section>
+<!-- Evidence Brief Section -->
+<section class="py-24 bg-surface relative">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-20">
+<div class="flex items-center gap-4 mb-4">
+<div class="h-px w-12 bg-tertiary"></div>
+<span class="text-tertiary font-bold tracking-widest text-sm uppercase font-label">Classified Evidence</span>
+</div>
+<h2 class="text-4xl font-headline font-bold text-slate-100 mb-6">The Anatomy of a Financial Deception</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<p class="font-body text-lg text-on-surface-variant leading-relaxed">
+                        The Financial Advisory Industry standards allow for "conflicts of interest" as long as they are buried in a 80-page disclosure documents. Our forensic team has decoded these documents to reveal how much your retirement is actually leaking.
+                    </p>
+<div class="border-l-2 border-outline-variant pl-8 py-2">
+<div class="text-tertiary font-headline font-black text-5xl mb-2">1.2%</div>
+<div class="text-sm font-label uppercase tracking-widest text-slate-400">Average Annual Fee Leakage per Investor</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group relative surface-container-low p-8 rounded-lg overflow-hidden transition-all hover:bg-surface-container-high flex flex-col">
+<div class="absolute top-0 left-0 w-1 h-full bg-tertiary"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-tertiary">account_balance_wallet</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold text-slate-100 mb-4 uppercase tracking-tight">The Hidden Fee Trap</h3>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                        Expense ratios are just the tip of the iceberg. We expose the "Soft Dollar" arrangements and 12b-1 fees that drain your accounts without appearing on your monthly statement.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-xs group-hover:gap-4 transition-all" href="#">
+                        Declassify Fee Structure
+                        <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+<!-- Card 2 -->
+<div class="group relative surface-container-low p-8 rounded-lg overflow-hidden transition-all hover:bg-surface-container-high flex flex-col">
+<div class="absolute top-0 left-0 w-1 h-full bg-slate-500 opacity-20 group-hover:bg-primary transition-colors"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:text-primary transition-colors">gavel</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold text-slate-100 mb-4 uppercase tracking-tight">The Fiduciary Myth</h3>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                        Most advisors operate under a "suitability" standard, not a fiduciary one. Learn the legal loophole that allows advisors to sell you high-commission products that are barely "good enough."
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-xs group-hover:gap-4 transition-all" href="#">
+                        Audit Legal Standards
+                        <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="group relative surface-container-low p-8 rounded-lg overflow-hidden transition-all hover:bg-surface-container-high flex flex-col">
+<div class="absolute top-0 left-0 w-1 h-full bg-slate-500 opacity-20 group-hover:bg-primary transition-colors"></div>
+<div class="mb-8">
+<span class="material-symbols-outlined text-4xl text-slate-400 group-hover:text-primary transition-colors">description</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold text-slate-100 mb-4 uppercase tracking-tight">Sales Pitch Decoder</h3>
+<p class="font-body text-on-surface-variant leading-relaxed mb-8 flex-grow">
+                        We strip away the marketing jargon. Use our interactive decoder to translate "Tax-Optimized Strategies" and "Proprietary Models" into what they really mean for your wallet.
+                    </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold tracking-widest uppercase text-xs group-hover:gap-4 transition-all" href="#">
+                        Launch Decoder
+                        <span class="material-symbols-outlined text-sm">arrow_right_alt</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Calculator Section -->
+<section class="py-24 bg-surface-container">
+    <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center mb-16">
+            <div class="flex items-center gap-4 mb-4 justify-center">
+                <div class="h-px w-12 bg-tertiary"></div>
+                <span class="text-tertiary font-bold tracking-widest text-sm uppercase font-label">Interactive Calculator</span>
+                <div class="h-px w-12 bg-tertiary"></div>
+            </div>
+            <h2 class="text-4xl font-headline font-bold text-slate-100 mb-6">Calculate the True Cost of Your Advisor</h2>
+            <p class="font-body text-lg text-on-surface-variant max-w-3xl mx-auto">
+                See exactly how much wealth you're losing to advisory fees over time. Enter your portfolio details below to uncover the hidden costs.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Calculator Card -->
+            <div class="lg:col-span-2">
+                <div class="bg-white rounded-2xl p-8 calculator-card">
+                    <h4 class="card-title mb-6">Calculate the Wealth Impact of Advisory Fees</h4>
+                    <form id="calculatorForm" class="space-y-6">
+                        <div class="input-field">
+                            <label for="initialValue" class="block text-sm font-semibold text-slate-700 mb-2">Initial Value ($)</label>
+                            <input id="initialValue" type="text" placeholder="Initial Portfolio Value" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" oninput="formatCurrency(this)" value="1,000,000" />
+                        </div>
+
+                        <div class="input-field">
+                            <label for="feePercentage" class="block text-sm font-semibold text-slate-700 mb-2">Annual Advisor Fee (%)</label>
+                            <input id="feePercentage" type="number" placeholder="Annual Fee %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" value="1" />
+                        </div>
+
+                        <div class="input-field">
+                            <label for="annualReturn" class="block text-sm font-semibold text-slate-700 mb-2">Anticipated Annual Return (%)</label>
+                            <input id="annualReturn" type="number" placeholder="Expected Annual Return %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" value="5" />
+                        </div>
+
+                        <div class="input-field">
+                            <label for="years" class="block text-sm font-semibold text-slate-700 mb-2">Years</label>
+                            <input id="years" type="number" placeholder="Years" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" value="15" />
+                        </div>
+
+                        <button type="button" onclick="calculate()" class="btn-calculate w-full text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                            Calculate Portfolio Value
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Results Card -->
+            <div class="lg:col-span-2">
+                <div id="resultsCard" class="bg-white rounded-2xl p-8 results-card shadow-2xl w-full">
+                    <h5 class="card-title mb-8">Analysis Results</h5>
+                    <div id="resultsContent">
+                        <div class="empty-state">
+                            <div class="empty-state-icon">📊</div>
+                            <p class="text-lg font-medium">Enter your portfolio details above</p>
+                            <p class="text-sm mt-2">Click "Calculate Portfolio Value" to see the analysis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Urgency Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative rounded-xl overflow-hidden shadow-2xl">
+<img alt="Signed Contract" class="w-full aspect-video object-cover" data-alt="Moody atmospheric photo of an official contract with a fountain pen resting on it, surrounded by heavy shadows and a magnifying glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuX1dlJxWZYlZqFf6alLCbcCumjzCTBG7B2v6j7gIEemz0igrXvLIa7sTHlf93RFQ-i54a92F5gEAI3K8vHXngxU5ONmlVuwLeCQ-7C4wJCbO1gNiplVfYg5aaO1tYdiRAKwk1-sNE13vdHmhDUnx5JxbdxuatfBq-H8ZG6-prMOF8M_a6VSUb9KOLFhHzaF0S7UzLMWmbGKYvcsE3akXgGAMx9JTsPC2f_QjMJSyF_4njmLQXzxbgm2eZtRkHKJ4YQMegPLgAR13z"/>
+<div class="absolute inset-0 bg-primary-container/20"></div>
+</div>
+<div>
+<h3 class="text-3xl font-headline font-bold text-slate-100 mb-6">Stop the Bleeding</h3>
+<p class="font-body text-lg text-on-surface-variant mb-8 leading-relaxed">
+                        Every day you wait is a day of compounded losses to intermediaries who take no riskS but reap massive rewards. The Dossier provides the exact questions you must ask your advisor today.
+                    </p>
+<div class="space-y-4 mb-10">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label uppercase tracking-widest text-slate-300">Identify 15 Hidden Commission Structures</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label uppercase tracking-widest text-slate-300">Download the 'Fiduciary Pledge' Document</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-label uppercase tracking-widest text-slate-300">Access the Whistleblower Database</span>
+</div>
+</div>
+<button class="w-full bg-on-tertiary-container text-surface-container-lowest py-5 rounded-md font-headline font-black uppercase tracking-[0.2em] shadow-lg hover:opacity-90 active:scale-[0.98] transition-all">
+                        Secure Access to the Full Dossier
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-950 w-full py-12 px-8 border-t border-slate-800/20">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto items-start">
+<div class="flex flex-col gap-4">
+<div class="font-['Manrope'] font-bold text-slate-300 text-xl">THE FORENSIC DOSSIER</div>
+<p class="font-['Newsreader'] italic text-sm text-slate-500 max-w-sm">
+                    © 2026 THE FORENSIC DOSSIER. ALL RIGHTS RESERVED. NOT FINANCIAL ADVICE. WE ARE AN INDEPENDENT INVESTIGATIVE COLLECTIVE.
+                </p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Resources</span>
+<a class="font-['Newsreader'] italic text-sm text-slate-500 hover:text-slate-300 transition-colors" href="#">SEC.gov</a>
+<a class="font-['Newsreader'] italic text-sm text-slate-500 hover:text-slate-300 transition-colors" href="#">FINRA</a>
+<a class="font-['Newsreader'] italic text-sm text-slate-500 hover:text-slate-300 transition-colors" href="#">Whistleblower Rights</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Legal</span>
+<a class="font-['Newsreader'] italic text-sm text-slate-500 hover:text-slate-300 transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Newsreader'] italic text-sm text-slate-500 hover:text-slate-300 transition-colors" href="#">Terms of Access</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-900 flex justify-center">
+<div class="flex items-center gap-2 opacity-30 text-slate-500">
+<span class="material-symbols-outlined text-xs">encrypted</span>
+<span class="text-[10px] font-label uppercase tracking-widest">End-to-End Encrypted Access Node: 77.4.12.9</span>
+</div>
+</div>
+</footer>
+<script>
+    function formatCurrency(el) {
+        let raw = el.value.replace(/\D/g, "");
+        if (raw.length > 0) {
+            el.value = new Intl.NumberFormat("en-US").format(raw);
+        } else {
+            el.value = "";
+        }
+    }
+
+    function calculate() {
+        const initialValue = parseInt(document.getElementById('initialValue').value.replace(/,/g, '')) || 0;
+        const feePercentage = parseInt(document.getElementById('feePercentage').value) || 0;
+        const annualReturn = parseInt(document.getElementById('annualReturn').value) || 0;
+        const years = parseInt(document.getElementById('years').value) || 0;
+
+        // Calculate future value no fees
+        let futureValueNoFees = initialValue;
+        for (let i = 0; i < years; i++) {
+            futureValueNoFees = Math.round((futureValueNoFees * (100 + annualReturn) + 50) / 100);
+        }
+
+        // Calculate portfolio value with fees
+        let portfolioValueWithFees = initialValue;
+        for (let i = 0; i < years; i++) {
+            portfolioValueWithFees = Math.round((portfolioValueWithFees * (100 + annualReturn - feePercentage) + 50) / 100);
+        }
+
+        // Simple fees paid
+        const simpleFeesPaid = Math.round((initialValue * feePercentage * years + 50) / 100);
+
+        // Compound loss
+        const compoundLoss = (futureValueNoFees - portfolioValueWithFees) - simpleFeesPaid;
+
+        // Total advisor cost
+        const totalAdvisorCost = simpleFeesPaid + compoundLoss;
+
+        // Update results
+        const resultsContent = document.getElementById('resultsContent');
+        resultsContent.innerHTML = `
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                <div class="result-card-modern" style="border-left: 4px solid #10b981;">
+                    <div class="result-label text-green-600">Portfolio Value with No Fees</div>
+                    <div class="result-value text-green-900 mt-3">
+                        $${futureValueNoFees.toLocaleString()}
+                    </div>
+                </div>
+
+                <div class="result-card-modern" style="border-left: 4px solid #64748b;">
+                    <div class="result-label text-slate-700">Portfolio Value with Fees</div>
+                    <div class="result-value text-slate-700 mt-3">
+                        $${portfolioValueWithFees.toLocaleString()}
+                    </div>
+                </div>
+
+                <div class="result-card-modern" style="border-left: 4px solid #f59e0b;">
+                    <div class="result-label text-orange-700">Advisor Fees Paid</div>
+                    <div class="result-value text-orange-700 mt-3">
+                        $${simpleFeesPaid.toLocaleString()}
+                    </div>
+                </div>
+
+                <div class="result-card-modern" style="border-left: 4px solid #ef4444;">
+                    <div class="result-label text-red-700">Lost Investment Opportunity</div>
+                    <div class="result-value text-red-700 mt-3">
+                        $${compoundLoss.toLocaleString()}
+                        <div class="text-xs text-black-600 mt-1" style="color: black;">The investment opportunity lost from Advisor fees, compounded</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-full total-impact-card rounded-2xl p-8 sm:p-12 text-center mt-8 -mx-8 -mb-8 mx-0 mb-0">
+                <div class="total-impact-label">
+                    Total Cost of Using an Advisor
+                </div>
+                <div class="total-impact-value text-4xl sm:text-5xl" title="Total Advisor Cost = Advisor fees paid + Investment opportunity lost">
+                    $${totalAdvisorCost.toLocaleString()}
+                </div>
+                <div class="text-xs mt-3 opacity-75">(Sum of direct fees and lost investment opportunity)</div>
+            </div>
+        `;
+
+        // Show results with animation
+        const resultsCard = document.getElementById('resultsCard');
+        setTimeout(() => {
+            resultsCard.classList.add('show');
+        }, 50);
+    }
+</script>
+</body></html>

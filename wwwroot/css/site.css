@@ -9,3 +9,158 @@ button, input, a {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 200ms;
 }
+
+/* Material Symbols */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Forensic Gradient */
+.forensic-gradient {
+  background: linear-gradient(180deg, rgba(11, 19, 38, 0) 0%, rgba(11, 19, 38, 1) 100%);
+}
+
+/* Mask Reveal */
+.mask-reveal {
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+/* Calculator Styles */
+.results-card {
+  opacity: 0;
+  transform: translateY(120px);
+  transition: opacity 2.5s ease-out, transform 1.5s ease-out;
+}
+
+.results-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.input-field {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.input-field input {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.input-field input:focus {
+  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+}
+
+.calculator-card {
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.calculator-card:hover {
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}
+
+.btn-calculate {
+  background: #667eea;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-calculate:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: left 0.3s ease;
+}
+
+.btn-calculate:hover {
+  box-shadow: 0 12px 24px rgba(102, 126, 234, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-calculate:hover:before {
+  left: 100%;
+}
+
+.result-card-modern {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.result-card-modern:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.result-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.result-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.total-impact-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.3);
+  cursor: help;
+  transition: all 0.3s ease;
+}
+
+.total-impact-card:hover {
+  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.4);
+  transform: translateY(-6px) scale(1.02);
+}
+
+.total-impact-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  opacity: 0.95;
+}
+
+.total-impact-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: #64748b;
+}
+
+.empty-state-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
