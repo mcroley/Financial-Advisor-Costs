@@ -102,8 +102,8 @@
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 <div class="lg:col-span-8">
 <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-tertiary-container border-l-4 border-tertiary text-on-tertiary-container">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
-<span class="text-xs font-bold tracking-[0.2em] uppercase">INTERNAL INVESTIGATION: 2024-05-X</span>
+<!-- <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="text-xs font-bold tracking-[0.2em] uppercase">INTERNAL INVESTIGATION: 2024-05-X</span> -->
 </div>
 <h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tighter leading-none mb-8 text-slate-100">
                         THE TRUST GAP: WHY YOUR FINANCIAL ADVISOR MAY BE YOUR GREATEST RISK.
@@ -144,7 +144,7 @@
                     </p>
 <div class="border-l-2 border-outline-variant pl-8 py-2">
 <div class="text-tertiary font-headline font-black text-5xl mb-2">1.2%</div>
-<div class="text-sm font-label uppercase tracking-widest text-slate-400">Average Annual Fee Leakage per Investor</div>
+<div class="text-sm font-label uppercase tracking-widest text-slate-400">Average Annual Fee an Investor Pays Their Financial Advisor</div>
 </div>
 </div>
 </div>
@@ -220,22 +220,22 @@
                     <form id="calculatorForm" class="space-y-6">
                         <div class="input-field">
                             <label for="initialValue" class="block text-sm font-semibold text-slate-700 mb-2">Initial Value ($)</label>
-                            <input id="initialValue" type="text" placeholder="Initial Portfolio Value" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" oninput="formatCurrency(this)" value="1,000,000" />
+                            <input id="initialValue" type="text" placeholder="Initial Portfolio Value" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" style="color: black;" oninput="formatCurrency(this)" value="1,000,000" />
                         </div>
 
                         <div class="input-field">
                             <label for="feePercentage" class="block text-sm font-semibold text-slate-700 mb-2">Annual Advisor Fee (%)</label>
-                            <input id="feePercentage" type="number" placeholder="Annual Fee %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" value="1" />
+                            <input id="feePercentage" type="number" placeholder="Annual Fee %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" style="color: black;" value="1" />
                         </div>
 
                         <div class="input-field">
                             <label for="annualReturn" class="block text-sm font-semibold text-slate-700 mb-2">Anticipated Annual Return (%)</label>
-                            <input id="annualReturn" type="number" placeholder="Expected Annual Return %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" value="5" />
+                            <input id="annualReturn" type="number" placeholder="Expected Annual Return %" step="1" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" style="color: black;" value="5" />
                         </div>
 
                         <div class="input-field">
-                            <label for="years" class="block text-sm font-semibold text-slate-700 mb-2">Years</label>
-                            <input id="years" type="number" placeholder="Years" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" value="15" />
+                            <label for="years" class="block text-sm font-semibold text-slate-700 mb-2">Years Invested</label>
+                            <input id="years" type="number" placeholder="Years" class="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:outline-none focus:border-blue-500" style="color: black;" value="15" />
                         </div>
 
                         <button type="button" onclick="calculate()" class="btn-calculate w-full text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
@@ -272,7 +272,7 @@
 <div>
 <h3 class="text-3xl font-headline font-bold text-slate-100 mb-6">Stop the Bleeding</h3>
 <p class="font-body text-lg text-on-surface-variant mb-8 leading-relaxed">
-                        Every day you wait is a day of compounded losses to intermediaries who take no riskS but reap massive rewards. The Dossier provides the exact questions you must ask your advisor today.
+                        Every day you wait is a day of compounded losses to intermediaries who take no risks but reap massive rewards. The Dossier provides the exact questions you must ask your advisor today.
                     </p>
 <div class="space-y-4 mb-10">
 <div class="flex items-center gap-4">
@@ -283,14 +283,14 @@
 <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="text-sm font-label uppercase tracking-widest text-slate-300">Download the 'Fiduciary Pledge' Document</span>
 </div>
-<div class="flex items-center gap-4">
+<!-- <div class="flex items-center gap-4">
 <span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 <span class="text-sm font-label uppercase tracking-widest text-slate-300">Access the Whistleblower Database</span>
-</div>
+</div> -->
 </div>
 <button class="w-full bg-on-tertiary-container text-surface-container-lowest py-5 rounded-md font-headline font-black uppercase tracking-[0.2em] shadow-lg hover:opacity-90 active:scale-[0.98] transition-all">
                         Secure Access to the Full Dossier
-                    </button>
+</button>
 </div>
 </div>
 </div>
