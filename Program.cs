@@ -18,6 +18,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.MapGet("/", async context =>
+{
+    context.Response.ContentType = "text/html";
+    await context.Response.SendFileAsync("wwwroot/index.html");
+});
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Investments}/{action=Index}/{id?}");
